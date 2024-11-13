@@ -9,8 +9,8 @@
         <script src="./res/js/index.js"></script>
     </head>
 
-    <body class="d-flex justify-content-center">
-        <div id="main" class="d-flex">
+    <body>
+        <div id="main" class="d-flex justify-content-center">
             <div class="d-flex flex-column">
                 <h1>Formulário de Empréstimo</h1>
                 <div class="d-flex gap-2">
@@ -20,25 +20,22 @@
                             type="text"
                             class="form-control"
                             name="nome"
-                            id=""
                             aria-describedby="helpId"
                             placeholder=""
                         />
                     </div>
                     
                     <div class="mb-3">
-                        <form name="cpf">
-                            <label for="" class="form-label">CPF</label>
-                            <input
-                                type="text"
-                                class="form-control"
-                                name="cpf"
-                                title="xxx.xxx.xxx-xx"
-                                id="cpf"
-                                placeholder="xxx.xxx.xxx-xx"
-                            />
-                            
-                        </form>
+                        <label for="" class="form-label">CPF</label>
+                        <input
+                            type="text"
+                            class="form-control"
+                            maxlength="14"
+                            name="cpf"
+                            oninput="cpf(this)"
+                            title="xxx.xxx.xxx-xx"
+                            placeholder="xxx.xxx.xxx-xx"
+                        />
                     </div>
 
                     <div class="mb-3">
@@ -46,9 +43,21 @@
                         <input
                             type="email"
                             class="form-control"
-                            name=""
-                            id=""
+                            name="email"
                             placeholder="abc@mail.com"
+                        />
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="" class="form-label">Telefone</label>
+                        <input
+                            type="text"
+                            class="form-control"
+                            maxlength="15"
+                            name="telefone"
+                            oninput="telefone(this)"
+                            title="(xx) xxxxx-xxxx"
+                            placeholder="(xx) xxxxx-xxxx"
                         />
                     </div>
                     
