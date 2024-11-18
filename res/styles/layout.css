@@ -1,3 +1,7 @@
 #main {
-    max-width: 20%;
+    max-width: 60%;
+}
+
+form {
+    all: unset;
 }
