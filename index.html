@@ -7,7 +7,6 @@
 
         <link rel="stylesheet" href="./res/styles/bootstrap/bootstrap.min.css">
         <link rel="stylesheet" href="./res/styles/layout.css">
-        <script src="./res/js/index.js"></script>
     </head>
 
     <body class="d-flex justify-content-center">
@@ -33,7 +32,7 @@
                                 class="form-control"
                                 maxlength="14"
                                 name="cpf"
-                                oninput="cpf(this)"
+                                oninput="format_cpf(this)"
                                 title="xxx.xxx.xxx-xx"
                                 placeholder="xxx.xxx.xxx-xx"
                             />
@@ -58,7 +57,7 @@
                                 class="form-control"
                                 maxlength="15"
                                 name="telefone"
-                                oninput="telefone(this)"
+                                oninput="format_telefone(this)"
                                 title="(xx) xxxxx-xxxx"
                                 placeholder="(xx) xxxxx-xxxx"
                             />
@@ -151,7 +150,7 @@
                                 class="form-control"
                                 maxlength="9"
                                 name="cep"
-                                oninput="cep(this)"
+                                oninput="format_cep(this)"
                                 title="xxxxx-xxx"
                                 placeholder="xxxxx-xxx"
                             />
@@ -194,5 +193,7 @@
         
         <!-- Bootstrap core JS-->
         <script src="./res/js/bootstrap/bootstrap.bundle.min.js"></script>
+        <!--My own script-->
+        <script src="./res/js/index.js"></script>
     </body>
 </html>

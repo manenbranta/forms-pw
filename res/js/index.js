@@ -1,7 +1,4 @@
-let filhos = Array.from(document.getElementsByName("temfilhos")).find(r => r.checked).value;
-alert(filhos);
-
-function cpf(input) {
+function format_cpf(input) {
     // Remover todos os valores que não são números
     let value = input.value.replace(/\D/g, '');
 
@@ -13,7 +10,7 @@ function cpf(input) {
     input.value = value;
 }
 
-function telefone(input) {
+function format_telefone(input) {
     // Remover todos os valores que não são números
     let value = input.value.replace(/\D/g, '');
 
@@ -24,7 +21,7 @@ function telefone(input) {
     input.value = value;
 }
 
-function cep(input) {
+function format_cep(input) {
     // Remover todos os valores que não são números
     let value = input.value.replace(/\D/g, '');
 
