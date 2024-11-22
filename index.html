@@ -10,10 +10,9 @@
     </head>
 
     <body class="d-flex justify-content-center">
-        <div id="main">
-            <div class="d-flex flex-column">
+        <div class="d-flex flex-column" id="main">
                 <h1 class="align-self-center m-3">Formulário de Empréstimo</h1>
-                <form action="" method="post">
+                <form id="form">
                     <div class="d-flex flex-wrap gap-3">
                         <div class="mb-3">
                             <label for="input-nome" class="form-label">Nome</label>
@@ -65,19 +64,13 @@
     
                         <div class="mb-3">
                             <label for="input-genero" class="form-label">Gênero</label>
-                            <small>(Digite caso for outro)</small>
-                            <input
-                                id="input-genero"
-                                type="text"
-                                class="form-control"
-                                list="genero" 
-                                name="genero"
-                            />
-                            <datalist id="genero">
-                                <option value="Masculino"></option>
-                                <option value="Feminino"></option>
-                                <option value="Não-Binário"></option>
-                            </datalist>
+                            <select class="form-control" name="genero" id="input-genero">
+                                <option value="" disabled selected>Selecione uma opção</option>
+                                <option value="Masculino">Masculino</option>
+                                <option value="Feminino">Feminino</option>
+                                <option value="Não-Binário">Não-Binário</option>
+                                <option value="Outro">Outro</option>
+                            </select>
                         </div>
                         
                         <div class="mb-3">
@@ -172,28 +165,102 @@
                         <div class="mb-3">
                             <label class="form-label" for="temfilhos"> Tem filhos?</label>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" value="true" name="temfilhos" id="simfilhos">
+                                <input class="form-check-input" type="radio" value="Sim" name="temfilhos" id="simfilhos">
                                 <label class="form-check-label" for="simfilhos">Sim</label>
                             </div>
 
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" value="false" name="temfilhos" id="naofilhos" selected>
+                                <input class="form-check-input" type="radio" value="Não" name="temfilhos" id="naofilhos">
                                 <label class="form-check-label" for="naofilhos">Não</label>
                             </div>
                         </div>
 
+                        <div id="num-filhos" class="mb-3">
+                            <label for="input-num-filhos" class="form-label">Quantos filhos?</label>
+                            <input 
+                                id="input-num-filhos"
+                                type="number" 
+                                class="form-control"
+                                name="num-filhos"
+                                min="1"
+                                max="99"
+                                onKeyPress="if(this.value.length>1) return false;"
+                            />
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="input-status" class="form-label">Status de Emprego</label>
+                            <select class="form-control" name="status" id="input-status">
+                                <option value="" disabled selected>Selecione uma opção</option>
+                                <option value="Funcionário">Funcionário/Empregado</option>
+                                <option value="Trabalhador Autônomo">Trabalhador Autônomo</option>
+                                <option value="Trabalhador Terceirizado">Trabalhador Terceirizado/Prestador de Serviço</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label" for="cobrarbanco">Cobrar através de um banco?</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" value="Sim" name="cobrarbanco" id="simcobrar">
+                                <label class="form-check-label" for="simcobrar">Sim</label>
+                            </div>
+
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" value="Não" name="cobrarbanco" id="naocobrar">
+                                <label class="form-check-label" for="naocobrar">Não</label>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="input-salario" class="form-label">Qual seu salário mensal?</label>
+                            <select class="form-control" name="salario" id="input-salario">
+                                <option value="" disabled selected>Selecione uma opção</option>
+                                <option value="-1">Menos de 1 salário mínimo</option>
+                                <option value="1">1 salário mínimo</option>
+                                <option value="2-3">De 2 a 3 salários mínimos</option>
+                                <option value="4-5">De 4 a 5 salários mínimos</option>
+                                <option value="6-7">De 6 a 7 salários mínimos</option>
+                                <option value="6-7">Mais de 7 salários mínimos</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="input-emprestimo" class="form-label">Quanto dinheiro irá emprestar?</label>
+                            <div class="input-group flex-nowrap">
+                                <span class="input-group-text">R$</span>
+                                <input 
+                                    id="input-emprestimo"
+                                    type="number" 
+                                    name="emprestimo" 
+                                    class="form-control"
+                                />
+                            </div>
+
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="input-finalidade" class="form-label">Para que precisa do empréstimo?</label>
+                            <select class="form-control" name="finalidade" id="input-finalidade">
+                                <option value="" disabled selected>Selecione uma opção</option>
+                                <option value="Negócio">Para o meu negócio</option>
+                                <option value="Compra de Bens">Para compra de bens</option>
+                                <option value="Investimento">Para um investimento</option>
+                                <option value="Dívidas">Para quitação de dívidas</option>
+                                <option value="Pessoal">Para uso pessoal</option>
+                            </select>
+                        </div>
                     </div>
                     
                     <button type="submit" class="btn btn-primary">
                         Submit
                     </button>
                 </form>
-            </div>
         </div>
         
         <!-- Bootstrap core JS-->
         <script src="./res/js/bootstrap/bootstrap.bundle.min.js"></script>
-        <!--My own script-->
+        <!--My scripts-->
         <script src="./res/js/index.js"></script>
+        <script src="./res/js/formatters.js"></script>
     </body>
 </html>

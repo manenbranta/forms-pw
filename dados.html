@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Formulário - Seus dados</title>
+
+        <link rel="stylesheet" href="./res/styles/bootstrap/bootstrap.min.css">
+        <link rel="stylesheet" href="./res/styles/layout.css">
+    </head>
+
+    <body class="d-flex justify-content-center">
+        <div class="d-flex flex-column" id="main">
+            <h1 class="align-self-center m-3">Seus dados: </h1>
+            <div class="d-flex">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Campo</th>
+                            <th scope="col">Valor</th>
+                        </tr>
+                    </thead>
+                    <tbody class="table-group-divider">
+                        <tr>
+                            <th scope="row">Nome</th>
+                            <td id="nome"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">CPF</th>
+                            <td id="cpf"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">E-mail</th>
+                            <td id="email"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Telefone</th>
+                            <td id="telefone"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Gênero</th>
+                            <td id="genero"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Data de Nascimento</th>
+                            <td id="nascimento"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Escolaridade</th>
+                            <td id="escolaridade"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Unidade Federativa</th>
+                            <td id="uf"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">CEP</th>
+                            <td id="cep"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Estado Civil</th>
+                            <td id="civil"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Tem Filhos?</th>
+                            <td id="temfilhos"></td>
+                        </tr>
+                        <tr id="numfilhos">
+                            <th scope="row">Quantia de filhos</th>
+                            <td id="num-filhos"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Status de Emprego</th>
+                            <td id="status"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Cobrar através de banco?</th>
+                            <td id="cobrarbanco"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Salário mensal</th>
+                            <td id="salario"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Dinheiro a emprestar</th>
+                            <td id="emprestimo"></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Finalidade do empréstimo</th>
+                            <td id="finalidade"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <!-- Bootstrap core JS-->
+        <script src="./res/js/bootstrap/bootstrap.bundle.min.js"></script>
+        <!--My scripts-->
+        <script src="./res/js/dados.js"></script>
+    </body>
+</html>

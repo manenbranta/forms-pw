@@ -1,32 +1,31 @@
-function format_cpf(input) {
-    // Remover todos os valores que não são números
-    let value = input.value.replace(/\D/g, '');
+let naoFilhos = document.getElementById("naofilhos");
+let simFilhos = document.getElementById("simfilhos");
+let numFilhos = document.getElementById("num-filhos");
+let prevDisplay = numFilhos.style.display;
 
-    // Formatação
-    if (value.length > 3) value = value.slice(0, 3) + '.' + value.slice(3);
-    if (value.length > 7) value = value.slice(0, 7) + '.' + value.slice(7);
-    if (value.length > 11) value = value.slice(0, 11) + '-' + value.slice(11);
+numFilhos.style.display = "none";
 
-    input.value = value;
-}
+naoFilhos.addEventListener("change", () => {
+    if (naoFilhos.checked) {
+        numFilhos.style.display = "none";
+    }
+})
 
-function format_telefone(input) {
-    // Remover todos os valores que não são números
-    let value = input.value.replace(/\D/g, '');
+simFilhos.addEventListener("change", () => {
+    if (simFilhos.checked) {
+        numFilhos.style.display = prevDisplay;
+    }
+})
 
-    // Formatação
-    if (value.length > 2) value = `(${value.slice(0,2)}) ${value.slice(2)}`;
-    if (value.length > 9) value = `${value.slice(0,9)}-${value.slice(9)}`;
+const form = document.getElementById("form");
 
-    input.value = value;
-}
+form.addEventListener("submit", (e) => {
+    e.preventDefault();
 
-function format_cep(input) {
-    // Remover todos os valores que não são números
-    let value = input.value.replace(/\D/g, '');
+    const formData = new FormData(form);
+    localStorage.setItem("data", JSON.stringify(Object.fromEntries(formData)));
 
-    // Formatação
-    if (value.length > 6) value = `${value.slice(0,6)}-${value.slice(6)}`;
+    console.log(formData);
 
-    input.value = value;
-}
+    window.location.href = "dados.html";
+});
