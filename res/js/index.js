@@ -23,7 +23,7 @@ form.addEventListener("submit", (e) => {
     e.preventDefault();
 
     const formData = new FormData(form);
-    localStorage.setItem("data", JSON.stringify(Object.fromEntries(formData)));
+    sessionStorage.setItem("data", JSON.stringify(Object.fromEntries(formData)));
 
     console.log(formData);
 
